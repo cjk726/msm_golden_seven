@@ -27,12 +27,29 @@ class MoviesController < ActionController::Base
     end
 
     
-    
-    
     def director_destroy_row
         toast_d = Director.find(params["director_toast_id"])
         toast_d.destroy
         
+        redirect_to("/directors")
+    end
+    
+    
+    def directors_new_form
+
+        render("directors_new_form.html.erb")
+    end
+    
+    
+    def create_director_row
+        
+        d = Director.new
+        d.name = params["the_name"]
+        d.bio = params["the_bio"]
+        d.dob = params["the_dob"]
+        d.image_url = params["the_image_url"]
+        d.save
+
         redirect_to("/directors")
       
     end
