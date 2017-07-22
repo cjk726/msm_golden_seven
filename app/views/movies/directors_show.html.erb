@@ -5,7 +5,7 @@
 <table>
     
   <tr>
-    <th>Delete</th>
+    <th>Links</th>
     <th>Name</th>
     <th>Bio</th> 
     <th>Dob</th>
@@ -13,7 +13,8 @@
   </tr>
   
   <tr>
-    <td><a href="/delete_director/<%= @d.id %>">Delete</a></td>
+    <td><a href="/delete_director/<%= @d.id %>">Delete</a>
+    <a href="/directors/<%= @d.id %>/edit_form">Edit</a></td>
     <td><%= @d.name %></td>
     <td><%= @d.bio %></td>
     <td><%= @d.dob %></td>

@@ -7,12 +7,27 @@
 
 <div>
 
+
+<!--<div>-->
+<!--  <% @d.each do |director| %>-->
+
+<!--  <img src="<%= director.image_url %>">-->
+<!--    <div>-->
+<!--      <a href="/directors/<%= director.id %>/edit">Edit</a>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <a href="/delete_director/<%= director.id %>">Delete</a>-->
+<!--    </div>-->
+<!--  <% end %>-->
+<!--</div>-->
+
+
 <table>
     
     <% @d.each do |director| %>
     
   <tr>
-    <th>Delete</th>  
+    <th>Links</th>  
     <th>Name</th>
     <th>Bio</th> 
     <th>Dob</th>
@@ -20,7 +35,8 @@
   </tr>
   
   <tr>
-    <td><a href="/delete_director/<%= director.id %>">Delete</a></td>  
+    <td><a href="/delete_director/<%= director.id %>">Delete</a>
+    <a href="/directors/<%= director.id %>/edit_form">Edit</a></td>  
     <td><%= director.name %></td>
     <td><%= director.bio %></td>
     <td><%= director.dob %></td>

@@ -51,8 +51,31 @@ class MoviesController < ActionController::Base
         d.save
 
         redirect_to("/directors")
-      
     end
+    
+    
+    def directors_edit_form
+
+        @d = Director.find(params["director_id"])
+    
+        render("directors_edit_form.html.erb")
+      end
+      
+    
+    def update_director_row
+    
+        @d = Director.find(params["director_id"])
+        @d.name = params["the_name"]
+        @d.bio = params["the_bio"]
+        @d.dob = params["the_dob"]
+        @d.image_url = params["the_image_url"]
+        @d.save
+        @id = @d.id
+    
+       redirect_to("/directors/"+@id.to_s)
+    
+    end
+    
     
     
 end
