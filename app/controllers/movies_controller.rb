@@ -7,7 +7,7 @@ class MoviesController < ActionController::Base
           
     #   @d = Director.all
 
-      render("index.html.erb")
+        render("index.html.erb")
     end
     
     
@@ -15,11 +15,11 @@ class MoviesController < ActionController::Base
 
         @d = Director.all
       
-      render("directors_index.html.erb")
+        render("directors_index.html.erb")
     end
     
     
-    def show
+    def directors_show
         
         @d = Director.find(params["director_id"])
 
@@ -27,6 +27,15 @@ class MoviesController < ActionController::Base
     end
 
     
+    
+    
+    def director_destroy_row
+        toast_d = Director.find(params["director_toast_id"])
+        toast_d.destroy
+        
+        redirect_to("/directors")
+      
+    end
     
     
 end
