@@ -12,6 +12,7 @@
     <% @d.each do |director| %>
     
   <tr>
+    <th>Delete</th>  
     <th>Name</th>
     <th>Bio</th> 
     <th>Dob</th>
@@ -19,6 +20,7 @@
   </tr>
   
   <tr>
+    <td><a href="/delete_director/<%= director.id %>">Delete</a></td>  
     <td><%= director.name %></td>
     <td><%= director.bio %></td>
     <td><%= director.dob %></td>
