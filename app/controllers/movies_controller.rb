@@ -177,22 +177,23 @@ class MoviesController < ActionController::Base
     end
     
     
-    def actors_new_form
+    def movies_new_form
 
-        render("actors_new_form.html.erb")
+        render("movies_new_form.html.erb")
     end
     
     
-    def create_actor_row
+    def create_movie_row
         
-        a = Actor.new
-        a.name = params["the_name"]
-        a.bio = params["the_bio"]
-        a.dob = params["the_dob"]
-        a.image_url = params["the_image_url"]
-        a.save
+        m = Movie.new
+        m.title = params["the_title"]
+        m.year = params["the_year"]
+        m.duration = params["the_duration"]
+        m.description = params["the_description"]
+        m.image_url = params["the_image_url"]
+        m.save
 
-        redirect_to("/actors")
+        redirect_to("/movies")
     end
     
     

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get("/actors/new_form", { :controller => "movies", :action => "actors_new_form" })
   get("/create_actor", { :controller => "movies", :action => "create_actor_row" })
 
+  get("/movies/new_form", { :controller => "movies", :action => "movies_new_form" })
+  get("/create_movie", { :controller => "movies", :action => "create_movie_row" })
+
 
 
   # READ
