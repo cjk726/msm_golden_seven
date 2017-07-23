@@ -8,11 +8,19 @@ Rails.application.routes.draw do
   # CREATE
   get("/directors/new_form", { :controller => "movies", :action => "directors_new_form" })
   get("/create_director", { :controller => "movies", :action => "create_director_row" })
+  
+  
 
   # READ
   get("/", { :controller => "movies", :action => "index" })
+  
   get("/directors", { :controller => "movies", :action => "directors_index" })
   get("/directors/:director_id", { :controller => "movies", :action => "directors_show" })
+
+  get("/actors", { :controller => "movies", :action => "actors_index" })
+  get("/actors/:actor_id", { :controller => "movies", :action => "actors_show" })
+
+
 
   # UPDATE
   get("/directors/:director_id/edit_form", { :controller => "movies", :action => "directors_edit_form" })
