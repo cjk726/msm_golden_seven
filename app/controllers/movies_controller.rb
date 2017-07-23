@@ -197,25 +197,26 @@ class MoviesController < ActionController::Base
     end
     
     
-    def actors_edit_form
+    def movies_edit_form
 
-        @a = Actor.find(params["actor_id"])
+        @m = Movie.find(params["movie_id"])
     
-        render("actors_edit_form.html.erb")
+        render("movies_edit_form.html.erb")
     end
       
     
-    def update_actor_row
+    def update_movie_row
+
+        @m = Movie.find(params["movie_id"])
+        @m.title = params["the_title"]
+        @m.year = params["the_year"]
+        @m.duration = params["the_duration"]
+        @m.description = params["the_description"]
+        @m.image_url = params["the_image_url"]
+        @m.save
+        @id = @m.id
     
-        @a = Actor.find(params["actor_id"])
-        @a.name = params["the_name"]
-        @a.bio = params["the_bio"]
-        @a.dob = params["the_dob"]
-        @a.image_url = params["the_image_url"]
-        @a.save
-        @id = @a.id
-    
-       redirect_to("/actors/"+@id.to_s)
+       redirect_to("/movies/"+@id.to_s)
     
     end
     
