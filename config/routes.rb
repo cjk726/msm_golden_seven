@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_director/:director_toast_id", { :controller => "movies", :action => "director_destroy_row" })  
   
+  get("/delete_actor/:actor_toast_id", { :controller => "movies", :action => "actor_destroy_row" })  
   
   
   
