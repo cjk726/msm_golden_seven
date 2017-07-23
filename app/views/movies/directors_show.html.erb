@@ -1,0 +1,30 @@
+<h1>Director Details</h1>
+
+<div>
+
+<table>
+    
+  <tr>
+    <th>Links</th>
+    <th>Name</th>
+    <th>Bio</th> 
+    <th>Dob</th>
+    <th>Image</th>
+  </tr>
+    
+  <tr>
+    <td><a href="/delete_director/<%= @d.id %>">Delete director</a>
+    <a href="/directors/<%= @d.id %>/edit_form">Edit director</a></td>
+    <td><%= @d.name %></td>
+    <td><%= @d.bio %></td>
+    <td><%= @d.dob %></td>
+    <!--<td><img src="<%= @d.image_url %>"></td>-->
+    <td><%= @d.image_url %></td>
+  </tr>
+    
+    
+  </tr>
+  
+</table>
+
+</div>

@@ -1,0 +1,26 @@
+<h1>Actor Details</h1>
+
+<div>
+
+<table>
+    
+  <tr>
+    <th>Links</th>
+    <th>Name</th>
+    <th>Bio</th> 
+    <th>Dob</th>
+    <th>Image</th>
+  </tr>
+  
+  <tr>
+    <td><a href="/delete_actor/<%= @a.id %>">Delete actor</a>
+    <a href="/actors/<%= @a.id %>/edit_form">Edit actor</a></td>
+    <td><%= @a.name %></td>
+    <td><%= @a.bio %></td>
+    <td><%= @a.dob %></td>
+    <!--<td><img src="<%= @a.image_url %>"></td>-->
+    <td><%= @a.image_url %></td>
+  
+</table>
+
+</div>
