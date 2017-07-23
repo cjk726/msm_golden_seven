@@ -151,7 +151,72 @@ class MoviesController < ActionController::Base
     end
     
     
+    # Actions for Movie model (table)
     
+    def movies_index
+
+        @m = Movie.all
+      
+        render("movies_index.html.erb")
+    end
+    
+    
+    def movies_show
+        
+        @m = Movie.find(params["movie_id"])
+
+        render("movies_show.html.erb")
+    end
+
+    
+    def actor_destroy_row
+        toast_d = Actor.find(params["actor_toast_id"])
+        toast_d.destroy
+        
+        redirect_to("/actors")
+    end
+    
+    
+    def actors_new_form
+
+        render("actors_new_form.html.erb")
+    end
+    
+    
+    def create_actor_row
+        
+        a = Actor.new
+        a.name = params["the_name"]
+        a.bio = params["the_bio"]
+        a.dob = params["the_dob"]
+        a.image_url = params["the_image_url"]
+        a.save
+
+        redirect_to("/actors")
+    end
+    
+    
+    def actors_edit_form
+
+        @a = Actor.find(params["actor_id"])
+    
+        render("actors_edit_form.html.erb")
+    end
+      
+    
+    def update_actor_row
+    
+        @a = Actor.find(params["actor_id"])
+        @a.name = params["the_name"]
+        @a.bio = params["the_bio"]
+        @a.dob = params["the_dob"]
+        @a.image_url = params["the_image_url"]
+        @a.save
+        @id = @a.id
+    
+       redirect_to("/actors/"+@id.to_s)
+    
+    end
     
     
     

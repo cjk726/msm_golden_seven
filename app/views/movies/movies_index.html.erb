@@ -1,0 +1,56 @@
+<h1>All Movies<h1>
+
+<div>
+<a href="/movies/new_form">
+    Add a new movie
+</a>
+</div>
+
+
+<div>
+
+<!--<div>-->
+<!--  <% @m.each do |movie| %>-->
+
+<!--  <img src="<%= movie.image_url %>">-->
+<!--    <div>-->
+<!--      <a href="/directors/<%= movie.id %>/edit">Edit</a>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <a href="/delete_director/<%= movie.id %>">Delete</a>-->
+<!--    </div>-->
+<!--  <% end %>-->
+<!--</div>-->
+
+<table>
+    
+    <% @m.each do |movie| %>
+    
+  <tr>
+    <th>Links</th>  
+    <th>Title</th>
+    <th>Year</th> 
+    <th>Duration</th>
+    <th>Description</th>
+    <th>Image url</th>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="/movies/<%= movie.id %>">Show details</a>
+      <a href="/movies/<%= movie.id %>/edit_form">Edit</a> 
+      <a href="/delete_movie/<%= movie.id %>">Delete</a>
+     </td>
+    <td><%= movie.title %></td>
+    <td><%= movie.year %></td>
+    <td><%= movie.duration %></td>
+    <td><%= movie.description %></td>
+    <!--<td><img src="<%= movie.image_url %>"></td>-->
+    <td><%= movie.image_url %></td>
+  </tr>
+  
+    <% end %>
+  
+</table>
+
+</div>

@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   get("/actors", { :controller => "movies", :action => "actors_index" })
   get("/actors/:actor_id", { :controller => "movies", :action => "actors_show" })
 
-
+  get("/movies", { :controller => "movies", :action => "movies_index" })
+  get("/movies/:movie_id", { :controller => "movies", :action => "movies_show" })
+  
+  
 
   # UPDATE
   get("/directors/:director_id/edit_form", { :controller => "movies", :action => "directors_edit_form" })

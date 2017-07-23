@@ -1,0 +1,28 @@
+<h1>Movie Details</h1>
+
+<div>
+
+<table>
+    
+  <tr>
+    <th>Links</th>  
+    <th>Title</th>
+    <th>Year</th> 
+    <th>Duration</th>
+    <th>Description</th>
+    <th>Image url</th>
+  </tr>
+  
+  <tr>
+    <td><a href="/delete_movie/<%= @m.id %>">Delete movie</a>
+    <a href="/movies/<%= @m.id %>/edit_form">Edit movie</a></td>
+    <td><%= @m.title %></td>
+    <td><%= @m.year %></td>
+    <td><%= @m.duration %></td>
+    <td><%= @m.description %></td>
+    <!--<td><img src="<%= @m.image_url %>"></td>-->
+    <td><%= @m.image_url %></td>
+  
+</table>
+
+</div>
