@@ -169,11 +169,11 @@ class MoviesController < ActionController::Base
     end
 
     
-    def actor_destroy_row
-        toast_d = Actor.find(params["actor_toast_id"])
+    def movie_destroy_row
+        toast_d = Movie.find(params["movie_toast_id"])
         toast_d.destroy
         
-        redirect_to("/actors")
+        redirect_to("/movies")
     end
     
     
