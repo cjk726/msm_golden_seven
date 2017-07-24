@@ -1,0 +1,54 @@
+<h1>All Actors</h1>
+
+<div>
+<a href="/actors/new_form">
+    Add a new actor
+</a>
+</div>
+
+
+<div>
+
+<!--<div>-->
+<!--  <% @a.each do |actor| %>-->
+
+<!--  <img src="<%= actor.image_url %>">-->
+<!--    <div>-->
+<!--      <a href="/directors/<%= actor.id %>/edit">Edit</a>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <a href="/delete_director/<%= actor.id %>">Delete</a>-->
+<!--    </div>-->
+<!--  <% end %>-->
+<!--</div>-->
+
+<table>
+    
+    <% @a.each do |actor| %>
+    
+  <tr>
+    <th>Links</th>  
+    <th>Name</th>
+    <th>Bio</th> 
+    <th>Dob</th>
+    <th>Image url</th>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="/actors/<%= actor.id %>">Show details</a>
+      <a href="/actors/<%= actor.id %>/edit_form">Edit</a> 
+      <a href="/delete_actor/<%= actor.id %>">Delete</a>
+     </td>
+    <td><%= actor.name %></td>
+    <td><%= actor.bio %></td>
+    <td><%= actor.dob %></td>
+    <!--<td><img src="<%= actor.image_url %>"></td>-->
+    <td><%= actor.image_url %></td>
+  </tr>
+  
+    <% end %>
+  
+</table>
+
+</div>
